@@ -22,7 +22,7 @@ class Login extends Component {
   }
 
   handleClick () {
-    window.location.assign('http://localhost:8888/login');
+    window.location.assign('https://spotifood-backend.herokuapp.com/login');
   }
 
   render () {
