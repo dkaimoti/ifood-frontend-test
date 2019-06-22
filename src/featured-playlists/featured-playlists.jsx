@@ -68,7 +68,7 @@ class FeaturedPlaylists extends Component {
                                         {playlist.name} 
                                     </a>
                                     <a className="playlists-link" href={`https://www.ifood.com.br/busca?q=${randomFood}`} target="_blank" rel="noopener">
-                                        <span>Que tal um pedir <span className="playlists-food">{randomFood}</span> no ifood enquanto escuta essa playlist?</span>                                    
+                                        <span>Que tal pedir <span className="playlists-food">{randomFood}</span> no Ifood enquanto escuta essa playlist?</span>                                    
                                     </a>
                                 </li> 
                         })}
