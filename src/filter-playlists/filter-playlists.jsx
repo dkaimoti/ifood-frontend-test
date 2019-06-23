@@ -41,8 +41,8 @@ class FilterPlaylists extends Component {
                                 <div className="filters-group" key={`filter-${filter.id}`}>
                                     <label className="filters-label" htmlFor={filter.name}>{filter.name}</label>
                                     <select id={filter.id} className="filters-select" name={filter.name} onChange={this.props.filterValueChanged}>
-                                        <option value="">{this.props.filtersValues[filter.id]}</option>
-                                        {filter.values.map(item => <option key={`option-${item.name}`} value={item.value}>{item.value}</option>)}
+                                        <option value="">Selecione</option>
+                                        {filter.values.map(item => <option key={`option-${item.name}`} value={item.value}>{item.name}</option>)}
                                     </select>
                                 </div>
                             )
@@ -69,8 +69,6 @@ class FilterPlaylists extends Component {
                                     </div>
                                 )
                             }
-
-
                         }
                     })
                 }

@@ -2,7 +2,7 @@ const userLang = navigator.language || navigator.userLanguage;
 const today = new Date();
 const INITIAL_STATE = {
     'locale': userLang.replace('-', '_'),
-    'country': userLang.substring(3, 5),
+    'country': 'BR',
     'timestamp': today.toISOString(),
     'limit': '10',
     'offset': '1'
