@@ -18,10 +18,10 @@ class FeaturedPlaylists extends Component {
     }
 
     componentWillMount() {
-        this.props.getPlaylists(this.props.user.data.access_token, this.props.filterParameters)
+        this.props.getPlaylists();
         this.setState({
             interval: setInterval(() => {
-                this.props.getPlaylists(this.props.user.data.access_token, this.props.filterParameters)
+                this.props.getPlaylists();
             }, 30000)
         })
     }

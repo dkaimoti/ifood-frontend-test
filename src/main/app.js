@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 import './app.scss';
 import Login from '../login/login';
 import FeaturedPlaylists from '../featured-playlists/featured-playlists';
 import FilterPlaylists from '../filter-playlists/filter-playlists';
-import { updateUserState } from './../login/login-actions';
 
 class App extends Component {
 
+  constructor() {
+    super()
+    this.state = {
+      user: ''
+    }
+  }
+
+  componentDidMount() {
+    this.setState({user:JSON.parse(localStorage.getItem('spotifood-user'))});
+  }
+
   render () {
-    if(this.props.user.data.access_token) {
+    if(this.state.user && this.state.user.access_token) {
       return (
         <div>
           <div className="spotifood-header">
@@ -28,6 +36,4 @@ class App extends Component {
     }
   }
 }
-const mapStateToProps = state => ({ user: state.user });
-const mapDispatchToProps = dispatch => bindActionCreators({ updateUserState }, dispatch);
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

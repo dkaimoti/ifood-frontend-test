@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import queryString from 'query-string';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
-
-import { updateUserState } from './login-actions';
 import './login.scss';
 
 class Login extends Component {
@@ -16,8 +12,8 @@ class Login extends Component {
   
   componentDidMount() {
     const user = queryString.parse(window.location.hash);
-    if(user) {
-        this.props.updateUserState(user);
+    if(user.access_token) {
+        localStorage.setItem('spotifood-user', JSON.stringify(user));
     }
   }
 
@@ -37,6 +33,4 @@ class Login extends Component {
       )
   }
 }
-const mapStateToProps = state => ({ access_token: state.user.access_token });
-const mapDispatchToProps = dispatch => bindActionCreators({ updateUserState }, dispatch);
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default Login;
