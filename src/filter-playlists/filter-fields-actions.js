@@ -1,6 +1,6 @@
 export const getFields = () => {
     return dispatch => {
-        const URL = `https://www.mocky.io/v2/5a25fade2e0000213aa90776`;
+        const URL = `${process.env.REACT_APP_FILTER_MOCK}`;
         fetch(URL, { method: "GET" })
             .then(response => response.json())
             .then(response => dispatch({

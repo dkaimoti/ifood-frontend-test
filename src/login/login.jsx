@@ -22,13 +22,13 @@ class Login extends Component {
   }
 
   handleClick () {
-    window.location.assign('https://spotifood-backend.herokuapp.com/login');
+    window.location.assign(process.env.REACT_APP_SPOTIFY_AUTH_SERVER);
   }
 
   render () {
     return (
-        <div class="spotifood-container">
-          <img class="spotifood-logo" src="spotifood-logo.png" alt=""/>
+        <div className="spotifood-container">
+          <img className="spotifood-logo" src="spotifood-logo.png" alt="Spotifood"/>
           <h1 className="spotifood-welcome">Bem-vindo ao Spotifood!</h1>
           <p className="spotifood-description">Veja as sugestões de playlist do Spotify para acompanhar sua comida favorita entregue pelo Ifood!</p>
           <p className="spotifood-description">Para iniciar, por favor acesse sua conta no spotify.</p>

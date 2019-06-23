@@ -53,7 +53,7 @@ class FeaturedPlaylists extends Component {
 
         return (
             <div>
-                <div class="filters-group">
+                <div className="filters-group">
                     <label className="filters-label">Filtrar por nome</label>
                     <input className="filters-input" type='text' onChange={this.onFilterByName} />
                 </div>
@@ -63,11 +63,11 @@ class FeaturedPlaylists extends Component {
                         this.filteredPlaylistsByName().map(playlist => {
                             let randomFood = this.randomText();
                             return <li className="playlists-item" key={`playlist-${playlist.id}`}>
-                                    <a className="playlists-link" href={playlist.external_urls.spotify} target="_blank" rel="noopener">
+                                    <a className="playlists-link" href={playlist.external_urls.spotify} target="_blank" rel="noopener noreferrer">
                                         <img className="playlists-icon" src={playlistIcon} alt=""/>
                                         {playlist.name} 
                                     </a>
-                                    <a className="playlists-link" href={`https://www.ifood.com.br/busca?q=${randomFood}`} target="_blank" rel="noopener">
+                                    <a className="playlists-link" href={`https://www.ifood.com.br/busca?q=${randomFood}`} target="_blank" rel="noopener noreferrer">
                                         <span>Que tal pedir <span className="playlists-food">{randomFood}</span> no Ifood enquanto escuta essa playlist?</span>                                    
                                     </a>
                                 </li> 

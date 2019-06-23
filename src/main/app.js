@@ -14,8 +14,8 @@ class App extends Component {
     if(this.props.user.data.access_token) {
       return (
         <div>
-          <div class="spotifood-header">
-            <img class="spotifood-logo" src="spotifood-logo.png" alt=""/>
+          <div className="spotifood-header">
+            <img className="spotifood-logo" src="spotifood-logo.png" alt=""/>
             <FilterPlaylists></FilterPlaylists>
           </div>
           <FeaturedPlaylists></FeaturedPlaylists>

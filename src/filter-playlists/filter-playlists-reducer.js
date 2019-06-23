@@ -1,11 +1,13 @@
+const userLang = navigator.language || navigator.userLanguage; 
 const today = new Date();
 const INITIAL_STATE = {
-    'locale': 'pt_BR',
-    'country': 'BR',
+    'locale': userLang.replace('-', '_'),
+    'country': userLang.substring(3, 5),
     'timestamp': today.toISOString(),
     'limit': '10',
     'offset': '1'
 }
+
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case 'FILTER_VALUE_CHANGED':

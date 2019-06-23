@@ -1,9 +1,11 @@
+@import './../vars.scss'; 
+
 .spotifood-header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    @media only screen and (min-width: 680px) {
+    @media only screen and (min-width: $breakpoint) {
         flex-direction: row;
     }
 }

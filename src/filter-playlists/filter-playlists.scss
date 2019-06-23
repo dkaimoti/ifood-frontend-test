@@ -1,13 +1,15 @@
+@import './../vars.scss'; 
+
 .filters {
     
     &-container {
-        display: flex;
         align-items: flex-start;
+        display: flex;
         flex-direction: column;
-        justify-content: left;
+        justify-content: flex-start;
         margin: 20px 0;
 
-        @media only screen and (min-width: 680px) {
+        @media only screen and (min-width: $breakpoint) {
             align-items: center;
             flex-direction: row;
             justify-content: space-between;
@@ -17,17 +19,26 @@
     }
 
     &-group {
-        margin: 0 10px 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin: 0;
+        width: 100%;
+
+        @media only screen and (min-width: $breakpoint) {
+            display: block;
+            margin: 0 10px;
+
+        }
     }
 
     &-label {
         display: inline-block;
-        width: 100px;
         color: white;
         font-size: 12px;
         margin-bottom: 5px;
 
-        @media only screen and (min-width: 680px) {
+        @media only screen and (min-width: $breakpoint) {
             display: block;
         }
         
@@ -37,9 +48,26 @@
     &-input {
         background-color: white;
         border: none;
-        border-radius: 12.5px;
-        height: 25px;
+        border-radius: 10px;
+        height: 30px;
         padding: 0 10px;
+        margin-bottom: 10px;
+
+        @media only screen and (min-width: $breakpoint) {
+            border-radius: 12.5px;
+            display: block;
+            margin-bottom: 0;
+            height: 25px;
+        }
+
+    }
+
+    &-integer {
+        max-width: 100%;
+
+        @media only screen and (min-width: $breakpoint) {
+            max-width: 50px;
+        }
     }
 }
 

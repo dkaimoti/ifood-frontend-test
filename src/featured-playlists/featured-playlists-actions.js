@@ -7,7 +7,7 @@ export const getPlaylists = () => {
             'Authorization': `Bearer ${access_token}`,
             "Content-Type": "application/json"
         }
-        const URL = `https://api.spotify.com/v1/browse/featured-playlists`+
+        const URL = `${process.env.REACT_APP_SPOTIFY_FEATURED_PLAYLISTS}`+
             `?country=${encodeURIComponent(filterParameters.country)}`+
             `&locale=${encodeURIComponent(filterParameters.locale)}`+
             `&timestamp=${encodeURIComponent(filterParameters.timestamp)}`+
