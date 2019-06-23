@@ -77,6 +77,6 @@ class FeaturedPlaylists extends Component {
         )
     }
 }
-const mapStateToProps = state => ({ playlists: state.lists.playlists ? state.lists.playlists.items : [], filterParameters: state.filtersValues, user: state.user });
+const mapStateToProps = state => ({ playlists: state.lists.playlists ? state.lists.playlists.items : [], filterParameters: state.filtersValues});
 const mapDispatchToProps = dispatch => bindActionCreators({ getPlaylists }, dispatch);
 export default connect(mapStateToProps, mapDispatchToProps)(FeaturedPlaylists);
