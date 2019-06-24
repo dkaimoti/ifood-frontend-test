@@ -28,3 +28,13 @@ Your app is ready to be deployed!
 ### `Demo`
 
 https://spotifood-frontend.herokuapp.com/
+
+
+### `Auth`
+
+For the authorization token, a private repository (to keep safe the client secret) was created with the guidelines from the Spotify using its example code.
+https://github.com/spotify/web-api-auth-examples
+
+
+
+
