@@ -1,4 +1,4 @@
-@import './../vars.scss'; 
+@import './../../vars.scss'; 
 
 .playlists {
   animation-duration: 2s;
@@ -7,7 +7,7 @@
   flex-direction: column;
   list-style: none;
   padding: 0;
-  margin: 0 0 30px 0;
+  margin: 20px 0 30px 0;
 
   @keyframes playlist-slidein {
     from {
@@ -21,8 +21,8 @@
   
 
   &-item {
-    align-items: flex-start;
-    border-bottom: 1px solid white;
+    align-items: center;
+    border-bottom: 1px solid #333333;
     color: white;
     display: flex;
     flex-direction: column;
@@ -48,10 +48,45 @@
       transform: scale(1.05);
     }
 
+   
     @media only screen and (min-width: $breakpoint) {
       margin-bottom: 0;
     }
 
+  }
+
+  &-total {
+    width: 100%;
+    margin: 10px 0;
+
+    @media only screen and (min-width: $breakpoint) {
+      width: 20%;
+      margin: 0;
+    }
+  }
+
+  &-spotify {
+    width: 100%;
+
+    @media only screen and (min-width: $breakpoint) {
+      width: 40%;
+    }
+
+  }
+  
+  &-ifood {
+    width: 100%;
+    justify-content: flex-start;
+
+    @media only screen and (min-width: $breakpoint) {
+      width: 40%;
+      justify-content: flex-end;
+    }
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
   }
 
   &-no-results {
@@ -62,8 +97,9 @@
   }
 
   &-icon {
-    margin-right: 10px;
-    max-width: 30px;
+    margin-right: 20px;
+    max-width: 80px;
+    border-radius: 10px;
   }
 
   &-food {

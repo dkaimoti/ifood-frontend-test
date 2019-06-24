@@ -4,10 +4,10 @@ import { bindActionCreators } from 'redux';
 import DateTimePicker from 'react-datetime-picker';
 
 import './filter-playlists.scss';
-import { filterValueChanged } from './filter-playlists-actions';
-import { getFields } from './filter-fields-actions';
+import { filterValueChanged } from './../../actions/filter-playlists-actions';
+import { getFields } from './../../actions/filter-fields-actions';
 import SpotifoodSelect from './../spotifood-select/spotifood-select';
-import SpotifoodInput from '../spotifood-input/spotifood-input';
+import SpotifoodInput from './../spotifood-input/spotifood-input';
 
 class FilterPlaylists extends Component {
 
@@ -33,7 +33,9 @@ class FilterPlaylists extends Component {
         this.props.filterValueChanged(payload) 
     } 
 
-    onChangeField = (event) => this.props.filterValueChanged(event);
+    onChangeField = (event) => {
+        this.props.filterValueChanged(event)
+    };
 
     render() {
         return (

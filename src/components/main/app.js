@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
 import './app.scss';
-import Login from '../login/login';
-import FeaturedPlaylists from '../featured-playlists/featured-playlists';
-import FilterPlaylists from '../filter-playlists/filter-playlists';
+import Login from './../login/login';
+import FeaturedPlaylists from './../featured-playlists/featured-playlists';
+import FilterPlaylists from './../filter-playlists/filter-playlists';
+import spotifoodLogo from './../../assets/spotifood-logo.png';
 
 class App extends Component {
 
@@ -23,7 +24,7 @@ class App extends Component {
       return (
         <div>
           <div className="spotifood-header">
-            <img className="spotifood-logo" src="spotifood-logo.png" alt=""/>
+            <img className="spotifood-logo" src={spotifoodLogo} alt=""/>
             <FilterPlaylists></FilterPlaylists>
           </div>
           <FeaturedPlaylists></FeaturedPlaylists>

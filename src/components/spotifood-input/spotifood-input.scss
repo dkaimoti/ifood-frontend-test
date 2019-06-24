@@ -1,6 +1,6 @@
-@import './../vars.scss';
+@import './../../vars.scss';
 
-.spotifood-select {
+.spotifood-input {
 
     background-color: white;
     border: none;
@@ -14,6 +14,14 @@
         display: block;
         margin-bottom: 0;
         height: 25px;
+    }
+
+    &-integer {
+        max-width: 100%;
+
+        @media only screen and (min-width: $breakpoint) {
+            max-width: 50px;
+        }
     }
 
 }

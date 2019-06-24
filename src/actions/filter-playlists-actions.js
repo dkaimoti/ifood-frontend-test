@@ -1,4 +1,4 @@
-import { getPlaylists } from "../featured-playlists/featured-playlists-actions";
+import { getPlaylists } from './featured-playlists-actions';
 
 export const filterValueChanged = event => {
     return (dispatch) => {
