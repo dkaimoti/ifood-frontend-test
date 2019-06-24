@@ -61,10 +61,11 @@ class FeaturedPlaylists extends Component {
                 <ul className="playlists">
                     {
                         this.filteredPlaylistsByName().map(playlist => {
-                            let randomFood = this.randomText();
+                            const randomFood = this.randomText();
+                            const playlistImage = playlist.images[0].url ? playlist.images[0].url : playlistIcon
                             return <li className="playlists-item" key={`playlist-${playlist.id}`}>
                                     <a className="playlists-link" href={playlist.external_urls.spotify} target="_blank" rel="noopener noreferrer">
-                                        <img className="playlists-icon" src={playlistIcon} alt=""/>
+                                        <img className="playlists-icon" src={playlistImage} alt="{playlist.name} "/>
                                         {playlist.name} 
                                     </a>
                                     <a className="playlists-link" href={`https://www.ifood.com.br/busca?q=${randomFood}`} target="_blank" rel="noopener noreferrer">

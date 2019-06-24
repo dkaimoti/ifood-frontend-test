@@ -6,6 +6,8 @@ import DateTimePicker from 'react-datetime-picker';
 import './filter-playlists.scss';
 import { filterValueChanged } from './filter-playlists-actions';
 import { getFields } from './filter-fields-actions';
+import SpotifoodSelect from './../spotifood-select/spotifood-select';
+import SpotifoodInput from '../spotifood-input/spotifood-input';
 
 class FilterPlaylists extends Component {
 
@@ -20,7 +22,7 @@ class FilterPlaylists extends Component {
         this.props.getFields();
     }
 
-    onChange = date => {
+    onChangeDatePicker = date => {
         this.setState({ date })
         const payload = {
             target: {
@@ -31,19 +33,18 @@ class FilterPlaylists extends Component {
         this.props.filterValueChanged(payload) 
     } 
 
+    onChangeField = (event) => this.props.filterValueChanged(event);
+
     render() {
         return (
             <div className="filters-container">
                 {
                     this.props.filters.map(filter => {
                         if (filter.values) {
-                            return (
+                            return (    
                                 <div className="filters-group" key={`filter-${filter.id}`}>
                                     <label className="filters-label" htmlFor={filter.name}>{filter.name}</label>
-                                    <select id={filter.id} className="filters-select" name={filter.name} onChange={this.props.filterValueChanged}>
-                                        <option value="">Selecione</option>
-                                        {filter.values.map(item => <option key={`option-${item.name}`} value={item.value}>{item.name}</option>)}
-                                    </select>
+                                    <SpotifoodSelect  onChangeField={this.onChangeField}  name={filter.name} id={filter.id} values={filter.values} />
                                 </div>
                             )
                         } else {
@@ -54,7 +55,7 @@ class FilterPlaylists extends Component {
                                         <DateTimePicker key={`filter-${filter.id}`}
                                             id={filter.id}
                                             className="filters-input"
-                                            onChange={this.onChange}
+                                            onChange={this.onChangeDatePicker}
                                             value={this.state.date}
                                             format="y-MM-dd h:mm:ss a"
                                         />
@@ -64,8 +65,7 @@ class FilterPlaylists extends Component {
                                 return (
                                     <div className="filters-group" key={`filter-${filter.id}`}>
                                         <label className="filters-label" htmlFor={filter.name}>{filter.name}</label>
-                                        <input id={filter.id} className={`filters-input filters-${filter.validation.primitiveType.toLowerCase()}`} value={this.props.filtersValues[filter.id]}
-                                            type={filter.validation.primitiveType === 'INTEGER' ? 'number' : 'text'} onChange={this.props.filterValueChanged} />
+                                        <SpotifoodInput  onChangeField={this.onChangeField}  name={filter.name} id={filter.id} value={this.props.filtersValues[filter.id]} />
                                     </div>
                                 )
                             }

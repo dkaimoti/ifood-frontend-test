@@ -62,13 +62,7 @@
 
     }
 
-    &-integer {
-        max-width: 100%;
-
-        @media only screen and (min-width: $breakpoint) {
-            max-width: 50px;
-        }
-    }
+   
 }
 
 .react-datetime-picker__wrapper {
