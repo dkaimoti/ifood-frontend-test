@@ -6,7 +6,7 @@ import promise from 'redux-promise';
 import multi from 'redux-multi';
 import thunk from 'redux-thunk';
 
-import App from './components/App';
+import App from './containers/App';
 import reducers from './reducers/root.reducer';
 import './assets/styles/styles.scss';
 

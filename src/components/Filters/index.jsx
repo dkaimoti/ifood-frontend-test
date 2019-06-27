@@ -1,41 +1,11 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import DateTimePicker from 'react-datetime-picker';
 
 import './styles.scss';
-import { filterValueChanged } from '../../actions/filterPlaylists.actions';
-import { getFields } from '../../actions/filterFields.actions';
 import SpotifoodSelect from '../SpotifoodSelect';
 import SpotifoodInput from '../SpotifoodInput';
 
-class FilterPlaylists extends Component {
-
-    constructor() {
-        super()
-        this.state = {
-            date: new Date(),
-        }
-    }
-
-    componentWillMount() {
-        this.props.getFields();
-    }
-
-    onChangeDatePicker = date => {
-        this.setState({ date })
-        const payload = {
-            target: {
-                value: date,
-                id: 'timestamp'
-            }
-        }
-        this.props.filterValueChanged(payload) 
-    } 
-
-    onChangeField = (event) => {
-        this.props.filterValueChanged(event)
-    };
+class Filters extends Component {
 
     render() {
         return (
@@ -46,7 +16,7 @@ class FilterPlaylists extends Component {
                             return (    
                                 <div className="filters-group" key={`filter-${filter.id}`}>
                                     <label className="filters-label" htmlFor={filter.name}>{filter.name}</label>
-                                    <SpotifoodSelect  onChangeField={this.onChangeField}  name={filter.name} id={filter.id} values={filter.values} />
+                                    <SpotifoodSelect  onChangeField={this.props.onChangeField}  name={filter.name} id={filter.id} values={filter.values} />
                                 </div>
                             )
                         } else {
@@ -57,8 +27,8 @@ class FilterPlaylists extends Component {
                                         <DateTimePicker key={`filter-${filter.id}`}
                                             id={filter.id}
                                             className="filters-input"
-                                            onChange={this.onChangeDatePicker}
-                                            value={this.state.date}
+                                            onChange={this.props.onChangeDatePicker}
+                                            value={this.props.date}
                                             format="y-MM-dd h:mm:ss a"
                                         />
                                     </div>
@@ -67,7 +37,7 @@ class FilterPlaylists extends Component {
                                 return (
                                     <div className="filters-group" key={`filter-${filter.id}`}>
                                         <label className="filters-label" htmlFor={filter.name}>{filter.name}</label>
-                                        <SpotifoodInput  onChangeField={this.onChangeField}  name={filter.name} id={filter.id} value={this.props.filtersValues[filter.id]} />
+                                        <SpotifoodInput  onChangeField={this.props.onChangeField}  name={filter.name} id={filter.id} value={this.props.filtersValues[filter.id]} />
                                     </div>
                                 )
                             }
@@ -78,6 +48,4 @@ class FilterPlaylists extends Component {
         )
     }
 }
-const mapStateToProps = state => ({ filters: state.filtersFields.filters, filtersValues: state.filtersValues });
-const mapDispatchToProps = dispatch => bindActionCreators({ getFields, filterValueChanged }, dispatch);
-export default connect(mapStateToProps, mapDispatchToProps)(FilterPlaylists);
+export default Filters;

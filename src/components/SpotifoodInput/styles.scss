@@ -1,27 +1,42 @@
 @import './../../assets/styles/vars.scss'; 
 
-.spotifood-input {
+.spotifood {
 
-    background-color: white;
-    border: none;
-    border-radius: 10px;
-    height: 30px;
-    padding: 0 10px;
-    margin-bottom: 10px;
+    &-input {
 
-    @media only screen and (min-width: $breakpoint) {
-        border-radius: 12.5px;
-        display: block;
-        margin-bottom: 0;
-        height: 25px;
-    }
-
-    &-integer {
-        max-width: 100%;
+        background-color: white;
+        border: none;
+        border-radius: 10px;
+        height: 30px;
+        padding: 0 10px;
+        margin-bottom: 10px;
 
         @media only screen and (min-width: $breakpoint) {
-            max-width: 50px;
+            border-radius: 12.5px;
+            display: block;
+            margin-bottom: 0;
+            height: 25px;
         }
+
+        &-integer {
+            max-width: 100%;
+
+            @media only screen and (min-width: $breakpoint) {
+                max-width: 50px;
+            }
+        }
+    }
+
+    &-label {
+        display: inline-block;
+        color: white;
+        font-size: 12px;
+        margin-bottom: 5px;
+
+        @media only screen and (min-width: $breakpoint) {
+            display: block;
+        }
+        
     }
 
 }

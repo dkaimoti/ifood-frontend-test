@@ -1,0 +1,43 @@
+.spotifood {
+
+    &-container {
+      animation-name: welcome-slidein;
+      animation-duration: 1s;
+    }
+  
+    @keyframes welcome-slidein {
+      from {
+        margin-top: -500px;
+      }
+  
+      to {
+        margin-top: 0;
+      }
+    }
+  
+    &-logo {
+      max-width: 200px;
+      margin: 30px 0 10px 0;
+    } 
+  
+    &-welcome {
+      color: white;
+    }
+  
+    &-description {
+      color: white;
+    }
+  
+    &-button-spotify {
+      background-color: #1ed760;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      height: 50px;
+      margin: 20px 0 0 0;
+      width: 200px;
+    }
+  }
+  

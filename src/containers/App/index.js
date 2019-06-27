@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import './styles.scss';
-import Login from './../Login/';
-import FeaturedPlaylists from './../FeaturedPlaylists';
+import Login from './../Login';
+import FeaturedPlaylists from '../FeaturedPlaylists';
 import FilterPlaylists from './../FilterPlaylists';
 import spotifoodLogo from './../../assets/images/spotifood-logo.png';
 

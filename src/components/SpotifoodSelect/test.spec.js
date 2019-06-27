@@ -12,7 +12,7 @@ describe('SpotifoodSelect Component', () => {
         }
     ]
     const onChange = () => false;
-    const wrapper = shallow(<SpotifoodSelect onChangeField={onChange}  name="test" id="test" values="test" />);
+    const wrapper = shallow(<SpotifoodSelect onChangeField={onChange}  name="test" id="test" values={values} />);
     expect(wrapper.find('.spotifood-select')).toBeTruthy();
   });
 

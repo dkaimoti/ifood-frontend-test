@@ -6,8 +6,11 @@ class SpotifoodInput extends Component {
 
     render() {
         return (
-            <input id={this.props.id} className={`spotifood-input spotifood-input-${this.props.customClass}`} value={this.props.value}
-            type={this.props.type === 'INTEGER' ? 'number' : 'text'} onChange={this.props.onChangeField} />
+            <div>
+                <label className="spotifood-label">{this.props.label}</label>
+                <input id={this.props.id} className={`spotifood-input spotifood-input-${this.props.customClass}`} value={this.props.value}
+                type={this.props.type === 'INTEGER' ? 'number' : 'text'} onChange={this.props.onChangeField} />
+            </div>
         )
     }
 }
