@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import queryString from 'query-string';
 
 import './styles.scss';
-import spotifoodLogo from './../../assets/spotifood-logo.png';
+import spotifoodLogo from './../../assets/images/spotifood-logo.png';
 
 class Login extends Component {
 

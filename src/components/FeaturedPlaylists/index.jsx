@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 
 import './styles.scss';
 import { getPlaylists } from '../../actions/featuredPlaylists.actions';
-import playlistIcon from './../../assets/playlist.svg'; 
+import playlistIcon from './../../assets/images/playlist.svg'; 
 import SpotifoodInput from './../SpotifoodInput';
 
 class FeaturedPlaylists extends Component {
@@ -63,7 +63,7 @@ class FeaturedPlaylists extends Component {
                     {
                         this.filteredPlaylistsByName().map(playlist => {
                             const randomFood = this.randomText();
-                            const playlistImage = playlist.images[0].url ? playlist.images[0].url : playlistIcon
+                            const playlistImage = playlist.images[0].url ? playlist.images[0].url : playlistIcon;
                             return <li className="playlists-item" key={`playlist-${playlist.id}`}>
                                     <a className="playlists-link playlists-spotify" href={playlist.external_urls.spotify} target="_blank" rel="noopener noreferrer">
                                         <img className="playlists-icon" src={playlistImage} alt="{playlist.name} "/>

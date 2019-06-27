@@ -8,7 +8,7 @@ import thunk from 'redux-thunk';
 
 import App from './components/App';
 import reducers from './reducers/root.reducer';
-import './index.scss';
+import './assets/styles/styles.scss';
 
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 const store = applyMiddleware(thunk, multi, promise)(createStore)(reducers, devTools);

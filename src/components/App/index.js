@@ -4,7 +4,7 @@ import './styles.scss';
 import Login from './../Login/';
 import FeaturedPlaylists from './../FeaturedPlaylists';
 import FilterPlaylists from './../FilterPlaylists';
-import spotifoodLogo from './../../assets/spotifood-logo.png';
+import spotifoodLogo from './../../assets/images/spotifood-logo.png';
 
 class App extends Component {
 
