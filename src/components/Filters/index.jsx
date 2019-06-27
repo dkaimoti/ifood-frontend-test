@@ -32,7 +32,7 @@ class Filters extends Component {
                                 )
                             } else {
                                 return (
-                                    <SpotifoodInput key={`filter-${filter.id}`} label={filter.name} onChangeField={this.props.onChangeField}  name={filter.name} id={filter.id} value={this.props.filtersValues[filter.id]} />
+                                    <SpotifoodInput type={filter.validation.primitiveType.toLowerCase()} key={`filter-${filter.id}`} label={filter.name} onChangeField={this.props.onChangeField} name={filter.name} id={filter.id} value={this.props.filtersValues[filter.id]} />
                                 )
                             }
                         }
