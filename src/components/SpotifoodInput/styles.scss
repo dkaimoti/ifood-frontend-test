@@ -2,6 +2,20 @@
 
 .spotifood {
 
+    &-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin: 0;
+        width: 100%;
+
+        @media only screen and (min-width: $breakpoint) {
+            display: block;
+            margin: 0 10px;
+
+        }
+    } 
+    
     &-input {
 
         background-color: white;

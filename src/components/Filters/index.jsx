@@ -14,10 +14,7 @@ class Filters extends Component {
                     this.props.filters.map(filter => {
                         if (filter.values) {
                             return (    
-                                <div className="filters-group" key={`filter-${filter.id}`}>
-                                    <label className="filters-label" htmlFor={filter.name}>{filter.name}</label>
-                                    <SpotifoodSelect  onChangeField={this.props.onChangeField}  name={filter.name} id={filter.id} values={filter.values} />
-                                </div>
+                                <SpotifoodSelect key={`filter-${filter.id}`} label={filter.name} onChangeField={this.props.onChangeField}  name={filter.name} id={filter.id} values={filter.values} />
                             )
                         } else {
                             if (filter.id === 'timestamp') {
@@ -35,10 +32,7 @@ class Filters extends Component {
                                 )
                             } else {
                                 return (
-                                    <div className="filters-group" key={`filter-${filter.id}`}>
-                                        <label className="filters-label" htmlFor={filter.name}>{filter.name}</label>
-                                        <SpotifoodInput  onChangeField={this.props.onChangeField}  name={filter.name} id={filter.id} value={this.props.filtersValues[filter.id]} />
-                                    </div>
+                                    <SpotifoodInput key={`filter-${filter.id}`} label={filter.name} onChangeField={this.props.onChangeField}  name={filter.name} id={filter.id} value={this.props.filtersValues[filter.id]} />
                                 )
                             }
                         }

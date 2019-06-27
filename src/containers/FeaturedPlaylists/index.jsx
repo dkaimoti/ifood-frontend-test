@@ -46,9 +46,7 @@ class FeaturedPlaylists extends Component {
         }
         return (
             <div>
-                <div className="filters-group">
-                    <SpotifoodInput label="Filtrar por nome" className="filters-input" onChangeField={this.onFilterByName} />
-                </div>
+                <SpotifoodInput label="Filtrar por nome" className="filters-input" onChangeField={this.onFilterByName} />
                 {message}
                 <Playlists playlist={this.filteredPlaylistsByName()} />             
             </div>

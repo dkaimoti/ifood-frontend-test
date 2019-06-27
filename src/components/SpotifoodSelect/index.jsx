@@ -6,10 +6,13 @@ class SpotifoodSelect extends Component {
 
     render() {
         return (
-            <select id={this.props.id} className="spotifood-select" name={this.props.name} onChange={this.props.onChangeField}>
-                <option value="">Selecione</option>
-                {this.props.values.map(item => <option key={`option-${item.name}`} value={item.value}>{item.name}</option>)}
-            </select>
+            <div className="spotifood-group">
+                <label className="spotifood-label">{this.props.label}</label>
+                <select id={this.props.id} className="spotifood-select" name={this.props.name} onChange={this.props.onChangeField}>
+                    <option value="">Selecione</option>
+                    {this.props.values.map(item => <option key={`option-${item.name}`} value={item.value}>{item.name}</option>)}
+                </select>
+            </div>
         )
     }
 }
