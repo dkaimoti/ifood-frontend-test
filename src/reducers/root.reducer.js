@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 
-import filterPlaylistReducer from './filter-playlists-reducer';
-import featuredPlaylistsReducer from './featured-playlists-reducer';
-import filterFiedlsReducer from './filter-fields-reducer';
+import filterPlaylistReducer from './filterPlaylists.reducer';
+import featuredPlaylistsReducer from './featuredPlaylists.reducer';
+import filterFiedlsReducer from './filterFields.reducer';
 
 const rootReducer = combineReducers({
     filtersFields: filterFiedlsReducer,

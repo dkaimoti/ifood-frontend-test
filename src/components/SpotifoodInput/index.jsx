@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './spotifood-input.scss';
+import './styles.scss';
 
 class SpotifoodInput extends Component {
 

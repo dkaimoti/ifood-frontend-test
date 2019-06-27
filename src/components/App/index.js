@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import './app.scss';
-import Login from './../login/login';
-import FeaturedPlaylists from './../featured-playlists/featured-playlists';
-import FilterPlaylists from './../filter-playlists/filter-playlists';
+import './styles.scss';
+import Login from './../Login/';
+import FeaturedPlaylists from './../FeaturedPlaylists';
+import FilterPlaylists from './../FilterPlaylists';
 import spotifoodLogo from './../../assets/spotifood-logo.png';
 
 class App extends Component {

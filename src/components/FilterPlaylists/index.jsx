@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import DateTimePicker from 'react-datetime-picker';
 
-import './filter-playlists.scss';
-import { filterValueChanged } from './../../actions/filter-playlists-actions';
-import { getFields } from './../../actions/filter-fields-actions';
-import SpotifoodSelect from './../spotifood-select/spotifood-select';
-import SpotifoodInput from './../spotifood-input/spotifood-input';
+import './styles.scss';
+import { filterValueChanged } from '../../actions/filterPlaylists.actions';
+import { getFields } from '../../actions/filterFields.actions';
+import SpotifoodSelect from '../SpotifoodSelect';
+import SpotifoodInput from '../SpotifoodInput';
 
 class FilterPlaylists extends Component {
 

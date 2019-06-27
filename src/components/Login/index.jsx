@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import queryString from 'query-string';
 
-import './login.scss';
+import './styles.scss';
 import spotifoodLogo from './../../assets/spotifood-logo.png';
 
 class Login extends Component {

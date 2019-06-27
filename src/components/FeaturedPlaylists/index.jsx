@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import './featured-playlists.scss';
-import { getPlaylists } from '../../actions/featured-playlists-actions';
+import './styles.scss';
+import { getPlaylists } from '../../actions/featuredPlaylists.actions';
 import playlistIcon from './../../assets/playlist.svg'; 
+import SpotifoodInput from './../SpotifoodInput';
 
 class FeaturedPlaylists extends Component {
 
@@ -55,7 +56,7 @@ class FeaturedPlaylists extends Component {
             <div>
                 <div className="filters-group">
                     <label className="filters-label">Filtrar por nome</label>
-                    <input className="filters-input" type='text' onChange={this.onFilterByName} />
+                    <SpotifoodInput  className="filters-input" onChangeField={this.onFilterByName} />
                 </div>
                 {message}
                 <ul className="playlists">
