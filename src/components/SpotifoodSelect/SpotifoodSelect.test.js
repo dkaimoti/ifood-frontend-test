@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import SpotifoodSelect from './';
+import SpotifoodSelect from '.';
 
 describe('SpotifoodSelect Component', () => {
   

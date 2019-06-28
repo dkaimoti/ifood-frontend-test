@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Playlists from './';
+import Playlists from '.';
 
 const playlistMock = [
     {

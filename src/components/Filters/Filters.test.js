@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Filters from './';
+import Filters from '.';
 
 const filtersMock = [
     {

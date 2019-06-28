@@ -3,7 +3,7 @@ export const getPlaylists = () => {
         const user = JSON.parse(localStorage.getItem('spotifood-user'));
         const access_token = user ? user.access_token : '';
         const state = getState();
-        const filterParameters = state.filtersValues
+        const filterParameters = state.filtersValues;
         const headers = {
             'Authorization': `Bearer ${access_token}`,
             "Content-Type": "application/json"
