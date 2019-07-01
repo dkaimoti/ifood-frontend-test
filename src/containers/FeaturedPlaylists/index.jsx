@@ -11,24 +11,20 @@ class FeaturedPlaylists extends Component {
     constructor() {
         super()
         this.state = {
-            interval: null,
             name: ''
         }
-        this.onFilterByName = this.onFilterByName.bind(this);
     }
 
     componentWillMount() {
         this.props.getPlaylists();
-        this.setState({
-            interval: setInterval(() => {
-                this.props.getPlaylists();
-            }, 30000)
-        })
+        this.interval = setInterval(() => {
+            this.props.getPlaylists();
+        }, 30000)
     }
 
     componentWillUnmount() {
-        clearInterval(this.setState.interval);
-        this.setState({ interval: null })
+        clearInterval(this.interval);
+        this.interval = null;
     }
 
     onFilterByName(e) {
@@ -46,13 +42,13 @@ class FeaturedPlaylists extends Component {
         }
         return (
             <div>
-                <SpotifoodInput label="Filtrar por nome" className="filters-input" onChangeField={this.onFilterByName} />
+                <SpotifoodInput label="Filtrar por nome" className="filters-input" onChangeField={() => this.onFilterByName} />
                 {message}
-                <Playlists playlist={this.filteredPlaylistsByName()} />             
+                <Playlists playlist={this.filteredPlaylistsByName()} />
             </div>
         )
     }
 }
-const mapStateToProps = state => ({ playlists: state.lists.playlists ? state.lists.playlists.items : [], filterParameters: state.filtersValues});
+const mapStateToProps = state => ({ playlists: state.lists.playlists ? state.lists.playlists.items : [], filterParameters: state.filtersValues });
 const mapDispatchToProps = dispatch => bindActionCreators({ getPlaylists }, dispatch);
 export default connect(mapStateToProps, mapDispatchToProps)(FeaturedPlaylists);
